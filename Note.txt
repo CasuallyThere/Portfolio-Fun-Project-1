@@ -1,0 +1,9 @@
+Note:
+
+Using Pycharm so that may help work
+
+This is a Pokemon shiny generator simulator made using python gui as a fun idea.
+
+For now it's:
+Only base rate of 1/8192
+Will add more later
