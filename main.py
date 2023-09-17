@@ -14,7 +14,7 @@ root.title("Pokemon Shiny Number Generator Sim")
 root.geometry('500x400')
 
 # Title label
-lbl = Label(root, text="Did Shiny Appear? (Currently only 1/8192 will add variables later)")
+lbl = Label(root, text="Did Shiny Appear? (Currently only 1/8192, add vars later)")
 lbl.grid(row = 0, column = 0)
 
 # Counter for number of tries
@@ -24,6 +24,21 @@ counter.grid(row =5, column = 0, sticky = W)
 #Label that tells us if we got shiny or not
 answer = Label(root, text="-----")
 answer.grid(row=3, column = 0, sticky = W)
+
+test = Label(root, text = "test")
+test.grid(row =4, column = 2)
+
+generation = Listbox(root, selectmode = SINGLE, width = 15)
+generation.grid(row=4, column = 0, sticky = W, )
+generation.insert(1, "Gen I")
+generation.insert(2, "Gen II")
+generation.insert(3, "Gen III")
+generation.insert(4, "Gen IV")
+generation.insert(5, "Gen V")
+generation.insert(6, "Gen VI")
+generation.insert(7, "Gen VII")
+generation.insert(8, "Gen VIII")
+generation.insert(9, "Gen IX")
 
 def generate(chance):
     #Base gen 1 - 4
@@ -42,11 +57,12 @@ def button_press():
 
     count += 1
     counter.configure(text = "Number of tries: " + str(count))
+    selection = generation.curselection()
+    test.configure(text= str(selection))
 
 #Button
 btn = Button(root, text="Generate", fg = "blue", command = button_press)
 btn.grid(row=2, column = 0)
-
 
 # Execute Tkinter
 root.mainloop()
